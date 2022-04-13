@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import TodoCount from "./TodoCount"
+import TodoTitle from "./TodoTitle"
+import TodoBody from './TodoBody'
+import { Provider } from "react-redux";
+import Store from "./Store";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   <div className="container">
+   <Provider store= {Store}>
+     <TodoCount />
+     <TodoTitle />
+     <TodoBody />
+     </Provider>
+     </div>
+   </>
+   
   );
 }
 
